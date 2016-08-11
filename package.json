@@ -1,5 +1,5 @@
 {
-  "name": "prajankya.github.io",
+  "name": "prajankya.me",
   "version": "1.0.0",
   "description": "Personal CV server",
   "main": "server.js",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prajankya/prajankya.github.io.git"
+    "url": "git+https://github.com/prajankya/prajankya.me.git"
   },
   "keywords": [
     "prajankya",
@@ -32,7 +32,7 @@
   "author": "Prajankya Sonar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prajankya/prajankya.github.io/issues"
+    "url": "https://github.com/prajankya/prajankya.me/issues"
   },
-  "homepage": "https://github.com/prajankya/prajankya.github.io#readme"
+  "homepage": "https://github.com/prajankya/prajankya.me#readme"
 }
