@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "node"
+cache:
+  bundler: true
+  directories:
+  - node_modules # NPM packages
+notifications:
+  email: false
+  slack: rigsolutions:03ZnLw91YXllQHg38KR2yKMm
