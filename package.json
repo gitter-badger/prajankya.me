@@ -1,0 +1,38 @@
+{
+  "name": "prajankya.github.io",
+  "version": "1.0.0",
+  "description": "Personal CV server",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "lodash": "^4.14.2",
+    "lowdb": "^0.13.1",
+    "mocha": "^3.0.0",
+    "morgan": "^1.7.0",
+    "request": "^2.74.0",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prajankya/prajankya.github.io.git"
+  },
+  "keywords": [
+    "prajankya",
+    "CV",
+    "nodejs",
+    "lowdb"
+  ],
+  "author": "Prajankya Sonar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prajankya/prajankya.github.io/issues"
+  },
+  "homepage": "https://github.com/prajankya/prajankya.github.io#readme"
+}
