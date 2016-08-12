@@ -5,7 +5,10 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "bunyan": "^1.8.1",
     "chai": "^3.5.0",
+    "debug": "^2.2.0",
+    "ejs": "^2.5.1",
     "express": "^4.14.0",
     "lodash": "^4.14.2",
     "lowdb": "^0.13.1",
@@ -17,7 +20,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "DEBUG=* nodemon server.js | ./node_modules/.bin/bunyan"
   },
   "repository": {
     "type": "git",
