@@ -8,7 +8,3 @@ cache:
 notifications:
   email: false
   slack: rigsolutions:03ZnLw91YXllQHg38KR2yKMm
-addons:
-  hosts:
-  - localhost
-  - prajankya.me

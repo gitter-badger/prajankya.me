@@ -24,22 +24,14 @@ describe("Main API Server", function() {
         describe("/resume API", function() {
             it("with curl", function(done) {
                 request({
-                        url: base_url + "/resume",
-                        headers: {
-                            'User-Agent': 'curl'
-                        }
-                    }, function(error, response, body) {
-                        //console.log(body.length);
-                        //console.log(error);
-                        //console.log(response);
-                        expect(response.statusCode).to.be.equal(200);
-                        done();
-                    })
-                    .on('error', function(err) {
-                        console.log(err);
-                        done();
-                    })
-                    .pipe(process.stdout);
+                    url: base_url + "/resume",
+                    headers: {
+                        'User-Agent': 'curl'
+                    }
+                }, function(error, response, body) {
+                    expect(response.statusCode).to.be.equal(200);
+                    done();
+                });
             });
             it("with browser", function(done) {
                 request(base_url + "/resume", function(error, response, body) {
