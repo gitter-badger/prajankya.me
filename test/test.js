@@ -1,5 +1,4 @@
 var server = require('../server.js');
-var resume = require('../routes/resume.js');
 var expect = require("chai").expect;
 var request = require("request");
 var base_url = "http://127.0.0.1:" + server.port;
@@ -22,21 +21,6 @@ describe("Main API Server", function() {
     });
 
     describe("Checking resume", function() {
-        describe("Format functions", function() {
-            it("for JSON", function(done) {
-                global.resume.getResume("json", function(stream) {
-                    var data = '';
-                    stream.on('data', function(chunk) {
-                        data += chunk;
-                    });
-
-                    stream.on('end', function() {
-                        expect(JSON.parse(data)).to.be.an("object");
-                        done();
-                    });
-                });
-            });
-        });
         describe("/resume API", function() {
             it("with curl", function(done) {
                 request({
