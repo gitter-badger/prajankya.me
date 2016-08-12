@@ -10,6 +10,7 @@ var low = require("lowdb");
 var name = 'My CV';
 var debug = require('debug')('http');
 var bunyan = require('bunyan');
+require('look').start();
 
 var log = bunyan.createLogger({
     name: 'myserver',
