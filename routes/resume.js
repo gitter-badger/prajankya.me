@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/all', function(req, res, next) {
+router.get('/update', function(req, res, next) {
     var folder = path.join(path.join(path.join(__dirname, "../"), "data"), "out");
     emptyDir(folder);
     global.resume.getResume("json", function(stream) {
@@ -18,10 +18,16 @@ router.get('/all', function(req, res, next) {
     })
 });
 
-router.get('/md', function(req, res, next) {
-    global.resume.getResume("md", function(stream) {
-        stream.pipe(res);
-    })
+router.get('/:type', function(req, res, next) {
+    var ar = ['doc', 'html', 'json', 'doc', 'txt', 'yml', 'md'];
+    if (ar.indexOf(req.params.type) > -1) {
+        global.resume.getResume(req.params.type, function(stream) {
+            stream.pipe(res);
+        });
+    } else {
+        res.sendStatus(501);
+        res.end('Not Implemented this File format yet');
+    }
 });
 
 global.resume.getResume = function(type, callback) {
