@@ -22,7 +22,7 @@ describe("Main API Server", function() {
 
     describe("Checking resume", function() {
         describe("/resume API", function() {
-            /*it("with curl", function(done) {
+            it("with curl", function(done) {
                 request({
                     url: base_url + "/resume",
                     headers: {
@@ -35,7 +35,7 @@ describe("Main API Server", function() {
                     expect(response.statusCode).to.be.equal(200);
                     done();
                 });
-            });*/
+            });
             it("with browser", function(done) {
                 request(base_url + "/resume", function(error, response, body) {
                     expect(response.statusCode).to.equal(200);
