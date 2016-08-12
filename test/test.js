@@ -1,4 +1,5 @@
 var server = require('../server.js');
+var resume = require('../routes/resume.js');
 var expect = require("chai").expect;
 var request = require("request");
 var base_url = "http://127.0.0.1:" + server.port;
@@ -8,9 +9,6 @@ describe("Main API Server", function() {
         expect(server.port).to.be.equals(3000);
         done();
     });
-});
-
-describe("Curl Server", function() {
     it("Checking / with curl", function(done) {
         request({
             url: base_url,
@@ -19,8 +17,31 @@ describe("Curl Server", function() {
             }
         }, function(error, response, body) {
             expect(response.statusCode).to.equal(200);
-            console.log(body);
             done();
+        });
+    });
+
+    describe("Checking /resume JSON", function() {
+        it("Checking the function of getResume()", function(done) {
+            expect(global.resume.getResume()).to.be.json;
+            done();
+        });
+        it("Checking if the function is available at /resume , with curl", function(done) {
+            request({
+                url: base_url + "/resume",
+                headers: {
+                    'User-Agent': 'curl'
+                }
+            }, function(error, response, body) {
+                expect(response.statusCode).to.equal(200);
+                done();
+            });
+        });
+        it("Checking if the function is available at /resume , with browser", function(done) {
+            request(base_url + "/resume", function(error, response, body) {
+                expect(response.statusCode).to.equal(200);
+                done();
+            });
         });
     });
 });
