@@ -46,14 +46,12 @@ describe("Main API Server", function() {
                     }
                 }, function(error, response, body) {
                     expect(response.statusCode).to.equal(200);
-                    expect(JSON.parse(body)).to.be.an("object");
                     done();
                 });
             });
             it("with browser", function(done) {
                 request(base_url + "/resume", function(error, response, body) {
                     expect(response.statusCode).to.equal(200);
-                    expect(JSON.parse(body)).to.be.an("object");
                     done();
                 });
             });
