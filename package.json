@@ -5,23 +5,23 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "bunyan": "^1.8.1",
     "chai": "^3.5.0",
+    "colors": "^1.1.2",
     "debug": "^2.2.0",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
+    "hackmyresume": "^1.8.0",
     "lodash": "^4.14.2",
     "lowdb": "^0.13.1",
     "mocha": "^3.0.0",
-    "morgan": "^1.7.0",
     "request": "^2.74.0",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec",
+    "test": "./node_modules/.bin/mocha --reporter spec --timeout 15000",
     "start": "node server.js",
-    "dev": "DEBUG=* nodemon server.js | ./node_modules/.bin/bunyan"
+    "dev": "DEBUG=* nodemon server.js"
   },
   "repository": {
     "type": "git",
