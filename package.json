@@ -19,7 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec",
+    "test": "DEBUG=* ./node_modules/.bin/mocha --reporter spec",
     "start": "node server.js",
     "dev": "DEBUG=* nodemon server.js"
   },
