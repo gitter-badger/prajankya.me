@@ -5,7 +5,7 @@ var path = require('path');
 var fs = require('fs');
 
 router.get('/', function(req, res, next) {
-    global.resume.getResume("json", function(stream) {
+    global.resume.getResume("html", function(stream) {
         stream.pipe(res);
     });
 });
