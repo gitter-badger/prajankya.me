@@ -48,7 +48,9 @@ global.resume.hackmyresume = function(callback) {
         'BUILD',
         path.join(path.join(path.join(__dirname, "../"), "data"), "resume.json"),
         'TO',
-        'data/out/res.all'
+        'data/out/res.all',
+        '--theme',
+        'modern'
     ];
     var hac = path.join(path.join(path.join(path.join(__dirname, "../"), "node_modules"), ".bin"), "hackmyresume");
     var cmd = require('child_process').spawn(hac, opts)
@@ -56,7 +58,7 @@ global.resume.hackmyresume = function(callback) {
             if (closeCode == 0) {
                 callback();
             } else {
-                console.error("hackmyresume run error, closed with code :" + code);
+                console.error("hackmyresume run error, closed with code :" + closeCode);
             }
         })
         .on('error', function(err) {
@@ -76,7 +78,7 @@ var emptyDir = function(dirPath) {
             if (fs.statSync(filePath).isFile()) {
                 fs.unlinkSync(filePath);
             } else {
-                rmDir(filePath);
+                emptyDir(filePath);
             }
         }
     }
