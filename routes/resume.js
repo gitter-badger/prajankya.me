@@ -19,7 +19,7 @@ router.get('/update', function(req, res, next) {
 });
 
 router.get('/:type', function(req, res, next) {
-    var ar = ['doc', 'html', 'json', 'doc', 'txt', 'yml', 'md'];
+    var ar = ['html', 'json', 'doc', 'txt', 'yml', 'md'];
     if (ar.indexOf(req.params.type) > -1) {
         global.resume.getResume(req.params.type, function(stream) {
             stream.pipe(res);
