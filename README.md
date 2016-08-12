@@ -7,19 +7,21 @@ My Personal Website
 
 You need to have nodejs installed
 
->
+```bash
 $> git clone https://github.com/prajankya/prajankya.me.git
 $> cd prajankya.me
 $> npm Install
+```
 
-Then for development stage :
+Then for while in development stage :
+```bash
 $> npm run dev
+```
 
-Or for production
+Or for production stage :
+```bash
 $> npm start
-
-Added all debug packages
-
+```
 
 ## License
 
