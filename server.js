@@ -1,24 +1,15 @@
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
-var logger = require('morgan');
+//var logger = require('morgan');
 var bodyParser = require('body-parser');
 var path = require('path');
 var favicon = require('serve-favicon');
 var low = require("lowdb");
+var colors = require('colors/safe');
 
 var name = 'My CV';
 var debug = require('debug')('http');
-var bunyan = require('bunyan');
-require('look').start();
-
-var log = bunyan.createLogger({
-    name: 'myserver',
-    serializers: {
-        req: bunyan.stdSerializers.req,
-        res: bunyan.stdSerializers.res
-    }
-});
 
 debug('booting %s', name);
 
@@ -27,7 +18,7 @@ app.set('view engine', 'ejs');
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 
 app.use(bodyParser.json({
     limit: '50mb'
@@ -39,28 +30,20 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(function(req, res, next) {
-    log.info({
-        req: req
-    }, 'start request'); // <-- this is the guy we're testing
-
     var ua = req.headers["user-agent"];
     if (/(curl)/gi.test(ua)) {
-        console.log("Curl exists");
-
+        console.log(colors.red.underline('i like cake and pies'));
+        res.end(colors.red.underline("\u00A7e Welcome To Prajankya's Personal Server"));
     } else {
         app.use(express.static(path.join(__dirname, 'public')));
 
         var routes = require('./routes/index');
         app.use('/', routes);
     }
-    log.info({
-        res: res
-    }, 'done response');
 });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    console.log(JSON.stringify(req.headers));
     var err = new Error('Not Found');
     err.status = 404;
     next(err);

@@ -5,8 +5,8 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "bunyan": "^1.8.1",
     "chai": "^3.5.0",
+    "colors": "^1.1.2",
     "debug": "^2.2.0",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
@@ -21,7 +21,7 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",
     "start": "node server.js",
-    "dev": "DEBUG=* nodemon server.js | ./node_modules/.bin/bunyan"
+    "dev": "DEBUG=http nodemon server.js"
   },
   "repository": {
     "type": "git",
