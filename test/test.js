@@ -1,7 +1,7 @@
 var server = require('../server.js');
 var expect = require("chai").expect;
 var request = require("request");
-var base_url = "http://127.0.0.1:" + server.port;
+var base_url = "http://localhost:" + server.port;
 
 describe("Main API Server", function() {
     it("Check that its testing server", function(done) {
