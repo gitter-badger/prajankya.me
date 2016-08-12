@@ -29,7 +29,9 @@ describe("Main API Server", function() {
                         'User-Agent': 'curl'
                     }
                 }, function(error, response, body) {
-                    console.log(body);
+                    console.log(body.length);
+                    console.log(error);
+                    //console.log(response);
                     expect(response.statusCode).to.be.equal(200);
                     done();
                 });
