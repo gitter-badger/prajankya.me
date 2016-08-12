@@ -19,7 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec",
+    "test": "./node_modules/.bin/mocha --reporter spec --timeout 15000",
     "start": "node server.js",
     "dev": "DEBUG=* nodemon server.js"
   },
