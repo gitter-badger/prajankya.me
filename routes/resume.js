@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 router.get('/update', function(req, res, next) {
     var folder = path.join(path.join(path.join(__dirname, "../"), "data"), "out");
     emptyDir(folder);
-    global.resume.getResume("json", function(stream) {
+    global.resume.getResume("html", function(stream) {
         stream.pipe(res);
     })
 });
