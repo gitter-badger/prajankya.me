@@ -8,7 +8,6 @@ var low = require("lowdb");
 
 /* -------------------------------- CONFIG -------------------------------*/
 
-var name = 'My CV'; // For debug
 global.settings = {
     photoFile: "prajankya.jpg", //then you can use http://website.url/photo for getting photo
     github_username: "prajankya", //If not given, any part of github will not be shown
@@ -17,9 +16,9 @@ global.settings = {
 
 /* ----------------------------- END OF CONFIG ---------------------------*/
 
-var debug = require('debug')('http');
+var debug = require('debug')('myServer');
 
-debug('booting %s', name);
+debug('booting %s', 'My CV');
 
 global.resumeDB = low('data/resume.json');
 resumeDB.defaults({})
