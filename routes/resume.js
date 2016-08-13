@@ -18,6 +18,10 @@ router.get('/update', function(req, res, next) {
     })
 });
 
+router.get('/ld', function(req, res, next) {
+    res.json(global.resume.getJSON_LD());
+});
+
 router.get('/:type', function(req, res, next) {
     var ar = ['html', 'json', 'doc', 'txt', 'yml', 'md'];
     if (ar.indexOf(req.params.type) > -1) {
@@ -29,6 +33,26 @@ router.get('/:type', function(req, res, next) {
         res.end('Not Implemented this File format yet');
     }
 });
+
+global.resume.getJSON_LD = function() {
+    return {
+        "@context": "http://www.schema.org",
+        "@type": "person",
+        "name": global.resume.get("name").value(),
+        "jobTitle": global.resume.get("employment").get("history").get(0).get("position").value(),
+        "url": global.resume.get("contact").get("website").value(),
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": global.resume.get("location").get("address").value(),
+            "addressLocality": global.resume.get("location").get("city").value(),
+            "addressRegion": global.resume.get("location").get("region").value(),
+            "postalCode": global.resume.get("location").get("code").value(),
+            "addressCountry": global.resume.get("location").get("country").value()
+        },
+        "email": global.resume.get("contact").get("email").value(),
+        "telephone": global.resume.get("contact").get("phone").value()
+    };
+};
 
 global.resume.getResume = function(type, callback) {
     var file = path.join(path.join(path.join(path.join(__dirname, "../"), "data"), "out"), "res." + type);
