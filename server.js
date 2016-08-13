@@ -8,14 +8,17 @@ var low = require("lowdb");
 
 /* -------------------------------- CONFIG -------------------------------*/
 
-var name = 'My CV';
-global.photoFile = "prajankya.jpg";
+global.settings = {
+    photoFile: "prajankya.jpg", //then you can use http://website.url/photo for getting photo
+    github_username: "prajankya", //If not given, any part of github will not be shown
+    website: "prajankya.me" //The Website where this is going to get hosted(currently only used in github user agent)
+};
 
 /* ----------------------------- END OF CONFIG ---------------------------*/
 
-var debug = require('debug')('http');
+var debug = require('debug')('myServer');
 
-debug('booting %s', name);
+debug('booting %s', 'My CV');
 
 global.resumeDB = low('data/resume.json');
 resumeDB.defaults({})
@@ -37,12 +40,16 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-var index = require('./routes/index');
-app.use('/', index);
-
 var resumes = require('./routes/resume');
 app.use('/resume', resumes);
 
+if (global.settings.github_username) {
+    var github = require('./routes/github');
+    app.use('/api/github', github);
+}
+
+var index = require('./routes/index');
+app.use('/', index);
 // catch 404 and forward to error handler
 /*
 app.use(function(req, res, next) {

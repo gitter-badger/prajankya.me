@@ -1,7 +1,6 @@
 var server = require('../server.js');
 var expect = require("chai").expect;
 var request = require("request");
-var resume = require('../routes/resume.js');
 var base_url = "http://localhost:" + server.port;
 
 describe("Main API Server", function() {
@@ -290,4 +289,38 @@ describe("Main API Server", function() {
             });
         });
     });
+
+    if (global.settings.github_username) {
+        describe("Checking github integration", function() {
+            describe("Format functions", function() {
+                it("for Github", function(done) {
+                    global.github.get(function(stream) {
+                        var data = '';
+                        stream.on('data', function(chunk) {
+                            data += chunk;
+                        });
+
+                        stream.on('end', function() {
+                            expect(JSON.parse(data)).to.be.an("array");
+                            done();
+                        });
+                    });
+                });
+                it("Checking second run for Github(very less time compared to previous test)", function(done) {
+                    global.github.get(function(stream) {
+                        var data = '';
+                        stream.on('data', function(chunk) {
+                            data += chunk;
+                        });
+
+                        stream.on('end', function() {
+                            expect(JSON.parse(data)).to.be.an("array");
+                            done();
+                        });
+                    });
+                });
+            });
+        });
+    }
+
 });

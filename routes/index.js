@@ -18,11 +18,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/photo', function(req, res, next) {
-    var filepath = path.join(path.join(path.join(__dirname, ".."), "public"), global.photoFile);
+    var filepath = path.join(path.join(path.join(__dirname, ".."), "public"), global.settings.photoFile);
     res.sendFile(filepath);
 });
 router.get('/photo/:size', function(req, res, next) {
-    var filepath = path.join(path.join(path.join(__dirname, ".."), "public"), req.params.size + "_" + global.photoFile);
+    var filepath = path.join(path.join(path.join(__dirname, ".."), "public"), req.params.size + "_" + global.settings.photoFile);
     try {
         fs.accessSync(filepath);
         res.sendFile(filepath);

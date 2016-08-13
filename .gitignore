@@ -37,3 +37,5 @@ jspm_packages
 .node_repl_history
 
 data/out/*
+data/resume_combined.json
+data/github.json
