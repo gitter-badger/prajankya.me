@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var colors = require('colors/safe');
+var path = require('path');
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,5 +16,18 @@ router.get('/', function(req, res, next) {
     }
 });
 
+router.get('/photo', function(req, res, next) {
+    var filepath = path.join(path.join(path.join(__dirname, ".."), "public"), global.photoFile);
+    res.sendFile(filepath);
+});
+router.get('/photo/:size', function(req, res, next) {
+    var filepath = path.join(path.join(path.join(__dirname, ".."), "public"), req.params.size + "_" + global.photoFile);
+    try {
+        fs.accessSync(filepath);
+        res.sendFile(filepath);
+    } catch (e) {
+        res.sendStatus(404);
+    }
+});
 
 module.exports = router;

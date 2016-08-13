@@ -24,6 +24,10 @@ Or for production stage :
 $> npm start
 ```
 
+### How to customize for yourself ###
+- Edit the /data/resume.json file
+- Edit Config section in server.js file in /
+
 ## License
 
 [MIT License](http://prajankya.mit-license.org/) © Prajankya
