@@ -49,6 +49,7 @@ describe("Main API Server", function() {
                 expect(out).to.have.property("url").not.to.be.empty;
                 expect(out).to.have.property("email").not.to.be.empty;
                 expect(out).to.have.property("telephone").not.to.be.empty;
+                expect(out).to.have.property("image").not.to.be.empty;
                 expect(out).to.have.property("address").not.to.be.empty;
                 expect(out.address).to.have.property("@type").equal("PostalAddress");
                 expect(out.address).to.have.property("streetAddress").not.to.be.empty;

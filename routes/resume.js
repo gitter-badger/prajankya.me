@@ -49,6 +49,7 @@ global.resume.getJSON_LD = function() {
             "postalCode": global.resume.get("location").get("code").value(),
             "addressCountry": global.resume.get("location").get("country").value()
         },
+        "image": global.resume.get("info").get("image").value(),
         "email": global.resume.get("contact").get("email").value(),
         "telephone": global.resume.get("contact").get("phone").value()
     };
