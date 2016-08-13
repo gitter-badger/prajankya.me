@@ -7,13 +7,13 @@
   "info": {
     "label": "Robotics Engineer",
     "characterClass": "Programmer",
-    "brief": "I am a software developer, Network Engineer and also an Robotics Engineer interested Robotics and Computer Networking. I am currently working in RIG.solutions as its C.T.O. and in the Board of Directors. Previously I had worked as freelancer as a web and Android app Developer. I was and will always be an electronics hobbyist and programmer at core. About me, I can say that I am a passionate developer, who enjoys agile practices and who is always willing to learn new technologies. Additionally, I spend my time acquiring more knowledge within the scope of Computer Networking, Robotics and Web backend developing.",
+    "brief": "<p>I am a software developer, Network Engineer and also an Robotics Engineer interested Robotics and Computer Networking. I am currently working in RIG.solutions as its C.T.O. and in the Board of Directors. Previously I had worked as freelancer as a web and Android app Developer. I was and will always be an electronics hobbyist and programmer at core.</p><p> About me, I can say that I am a passionate developer, who enjoys agile practices and who is always willing to learn new technologies. Additionally, I spend my time acquiring more knowledge within the scope of Computer Networking, Robotics and Web backend developing.</p>",
     "image": "http://prajankya.me/photo",
     "quote": "Be the change you want to see in the world."
   },
   "contact": {
     "website": "http://prajankya.me/",
-    "phone": "+91 7829 545547",
+    "phone": "+917829545547",
     "email": "prajankya@rig.solutions",
     "other": [
       {
@@ -32,17 +32,85 @@
   },
   "projects": [
     {
+      "title": "AgriMapper",
+      "category": "Robotics",
+      "role": "Researcher"
+    },
+    {
+      "title": "prajankya.me",
+      "category": "Web Development",
+      "role": "Developer"
+    },
+    {
+      "title": "mit-license",
+      "category": "Web Development",
+      "role": "Contributor"
+    },
+    {
+      "title": "vod_server",
+      "category": "Web Development and Compression",
+      "role": "Developer",
+      "start": "2016-08",
+      "end": "2016-08"
+    },
+    {
+      "title": "Infocell",
+      "category": "Web Development",
+      "role": "Network Engineer",
+      "start": "2016-07",
+      "end": "2016-07"
+    },
+    {
+      "title": "Jewellery",
+      "category": "Web Development",
+      "role": "Developer",
+      "end": "2016-06"
+    },
+    {
       "title": "Lidar-Robot",
       "category": "Robotics",
-      "role": "contributor",
+      "role": "Researcher",
       "url": "http://prajankya.github.io/Lidar-Robot/",
-      "start": "2016-03",
+      "start": "2016-02",
+      "end": "2016-06",
       "media": [
         {
           "category": "download",
           "url": "https://github.com/prajankya/Lidar-Robot/"
         }
       ]
+    },
+    {
+      "title": "lidar-robot-dl",
+      "category": "Web Development",
+      "role": "Developer",
+      "end": "2016-04"
+    },
+    {
+      "title": "ROS-Lidar-Robot-Base",
+      "category": "Robotics",
+      "role": "Researcher",
+      "start": "2016-02",
+      "end": "2016-06"
+    },
+    {
+      "title": "ROS-Lidar-Robot-Controller",
+      "category": "Robotics",
+      "role": "Researcher",
+      "start": "2016-02",
+      "end": "2016-06"
+    },
+    {
+      "title": "Java-RGB-Physical-Pixel",
+      "category": "Hardware Programming",
+      "role": "Programmer",
+      "end": "2016-04"
+    },
+    {
+      "title": "ArduinoModbus",
+      "category": "Hardware Programming",
+      "role": "Developer",
+      "end": "2015-12"
     }
   ],
   "social": [
@@ -54,66 +122,56 @@
     }
   ],
   "employment": {
-    "summary": "7+ years industry IT and software development experience.",
+    "summary": "3+ years Web and software development, Network Planning and Setup experience.",
     "history": [
       {
-        "employer": "Area 52",
-        "url": "https://area52.io/does-not-exist",
-        "position": "Head Code Ninja",
-        "summary": "Development team manager for [**Quantum Diorama**](https://en.wikipedia.org/wiki/Vaporware), a distributed molecular modeling and analysis suite for Linux and OS X.",
-        "start": "2013-09",
+        "employer": "RIG.solutions",
+        "url": "https://rig.solutions/",
+        "position": "Chief Technical Officer",
+        "summary": "Development team manager for TrackMySalesman a workforce managing Software",
+        "start": "2014-05",
         "keywords": [
-          "Agile",
-          "PM",
-          "C",
           "C++",
-          "R",
+          "Java",
           "OpenGL",
-          "Boost",
-          "MySQL",
+          "PHP",
+          "MongoDB",
           "PostgreSQL",
-          "JIRA"
+          "Node.js"
         ],
         "highlights": [
-          "Managed a 5-person development team",
-          "Accomplishment 2",
-          "Etc."
+          "Managed a 12-person development team",
+          "Used custom HTML elements with Shadow DOM (Polymer)",
+          "Derived a better Algorithm to snap fit track to road, Patent in Process"
         ]
       }
     ]
   },
   "education": {
-    "summary": "",
+    "summary": "Automation and Robotics Engineer",
     "level": "degree",
-    "degree": "BSCS",
+    "degree": "BE",
     "history": [
       {
-        "institution": "Cornell University",
-        "title": "BSCS",
-        "url": "https://www.cornell.edu/",
-        "start": "2005-09",
-        "end": "2008-05",
-        "grade": "3.5",
-        "summary": "A multiline summary of the education.",
+        "institution": "B.V. Bhoomaraddi College od Engineering and Technology",
+        "title": "BE",
+        "url": "https://bvb.edu/",
+        "start": "2013-08",
+        "grade": "4.0",
+        "summary": "Automation and Robotics Engineering **GPA:4.0**",
         "curriculum": [
-          "Course 1",
-          "Course 2",
-          "Course 2"
+          "Advanced Mobile Robots and Image Processing,",
+          "Control Systems,",
+          "PLC and Drive Systems"
         ]
       },
       {
-        "institution": "Medfield College",
-        "title": "",
-        "url": "https://en.wikipedia.org/wiki/Medfield_College",
-        "start": "2003-09",
-        "end": "2005-06",
-        "grade": "3.2",
-        "summary": "A multiline summary of the education.",
-        "curriculum": [
-          "Course 1",
-          "Course 2",
-          "Course 2"
-        ]
+        "institution": "KPPS",
+        "url": "http://kpps.ac.in/",
+        "start": "2011-06",
+        "end": "2013-06",
+        "grade": "3.7",
+        "summary": "12th Grade in CBSE Board **GPA:3.7**<br><br>10th Grade in CBSE Board **GPA:4.3**"
       }
     ]
   },
@@ -136,42 +194,41 @@
       },
       {
         "role": "Coordinator",
-        "organization": "Campus Coder's Meetup",
-        "start": "2003-02",
-        "end": "2004-04",
-        "summary": "Host of a monthly **campus-wide meetup for CS students**. Code, coffee, and crullers!"
+        "organization": "Robot Club",
+        "start": "2014-02",
+        "summary": "Head of campus-wide Club for **Robotics Enthusiasts**."
       }
     ]
   },
   "service": {
-    "summary": "Active US Army Reserve member and Technology for Tots technical consultant and volunteer coordinator.",
+    "summary": "Active member volunteer for ROBOcon 2015 India Competition.",
     "history": [
       {
         "flavor": "volunteer",
-        "position": "Technical Consultant",
-        "organization": "Technology for Tots",
-        "url": "http://technology-for-tots.org",
-        "start": "2003-11",
-        "end": "2005-06",
-        "summary": "Summary of this volunteer stint.",
+        "position": "Team Leader",
+        "organization": "Team for ROBOcon 2016",
+        "url": "https://en.wikipedia.org/wiki/ABU_Robocon",
+        "start": "2016-01",
+        "end": "2016-03",
+        "summary": "Team Leader of College Team for the Competition.",
         "highlights": [
-          "Accomplishment 1",
-          "Accomplishment 2",
-          "etc"
+          "Made Renewable Energy based Robots",
+          "Pole Climbing Robot",
+          "Wind Energy based Locomotion Robot"
         ]
       },
       {
-        "flavor": "military",
-        "position": "NCO",
-        "organization": "US Army Reserves",
-        "url": "http://www.usar.army.mil/",
-        "start": "1999-11",
-        "end": "2003-06",
-        "summary": "Summary of this military stint.",
+        "flavor": "volunteer",
+        "position": "Electronics Head",
+        "organization": "Team for ROBOcon 2015",
+        "url": "https://en.wikipedia.org/wiki/ABU_Robocon",
+        "start": "2014-12",
+        "end": "2015-03",
+        "summary": "Volunteer and Active member in College Team for the Competition.",
         "highlights": [
-          "Accomplishment 1",
-          "Accomplishment 2",
-          "etc"
+          "Made 2 holonomic Drive Badminton Doubles Playing Robots",
+          "Whole Circuit made in SMD",
+          "3D Printed Custom Remote"
         ]
       }
     ]
@@ -179,62 +236,95 @@
   "skills": {
     "sets": [
       {
-        "name": "Web",
-        "level": "advanced",
+        "name": "Robotics",
+        "level": "master",
         "skills": [
-          "JavaScript",
-          "HTML 5",
-          "CSS",
-          "LAMP",
-          "MVC",
-          "REST"
+          "R.O.S.",
+          "Microcontrollers",
+          "Arduino",
+          "ARM"
         ]
       },
       {
         "name": "JavaScript",
-        "level": "master",
+        "level": "advanced",
         "skills": [
           "Node.js",
           "Angular.js",
           "jQuery",
-          "Bootstrap",
-          "React.js",
-          "Backbone.js"
+          "Bootstrap"
+        ]
+      },
+      {
+        "name": "Web Development",
+        "level": "master",
+        "skills": [
+          "JavaScript",
+          "HTML 5",
+          "CSS 3",
+          "LAMP",
+          "MVC",
+          "PHP",
+          "REST"
+        ]
+      },
+      {
+        "name": "Industrial Automation",
+        "level": "intermediate",
+        "skills": [
+          "CNC and Other NC",
+          "PLCs of Beckhoff and Rexroth",
+          "Ladder",
+          "STs"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "level": "intermediate",
+        "skills": [
+          "RF circuits",
+          "SMD Soldering",
+          "Analog circuits",
+          "Microcontrollers"
+        ]
+      },
+      {
+        "name": "Android App Development",
+        "level": "advanced",
+        "skills": [
+          "Sherlock",
+          "Background services",
+          "MVC"
         ]
       },
       {
         "name": "Database",
         "level": "intermediate",
         "skills": [
+          "MongoDB",
           "MySQL",
           "PostgreSQL",
-          "NoSQL",
-          "ORM",
-          "Hibernate"
+          "NoSQL"
         ]
       },
       {
         "name": "Cloud",
         "level": "intermediate",
         "skills": [
-          "AWS",
-          "EC2",
-          "RDS",
-          "S3",
           "Azure",
+          "Google Compute Engine",
+          "G-Drive",
+          "S3",
           "Dropbox"
         ]
       },
       {
         "name": "Project",
-        "level": "beginner",
+        "level": "intermediate",
         "skills": [
-          "Agile",
-          "TFS",
-          "JIRA",
           "GitHub",
-          "Unified Process",
-          "MS Project"
+          "Gitlab",
+          "Travis-ci"
         ]
       }
     ],
@@ -275,134 +365,26 @@
       }
     ]
   },
-  "samples": [
-    {
-      "title": "Asteroids",
-      "summary": "A browser-based space shooter built on Three.js.",
-      "url": "http://janef.me/asteroids",
-      "date": "2014-09"
-    },
-    {
-      "title": "Rememberpedia",
-      "summary": "A website to help you remember things.",
-      "url": "https://rememberpedia.com",
-      "date": "2015-07"
-    }
-  ],
   "writing": [
     {
-      "title": "Teach Yourself GORFF in 21 Days",
-      "flavor": "book",
-      "date": "2008",
-      "publisher": {
-        "name": "Amazon",
-        "url": "https://www.amazon.com"
-      },
-      "url": "http://url.to.publication.com/blah",
-      "author": [
-        "Jane Fullstacker",
-        "John Smith"
-      ],
-      "summary": "A primer on the programming language of GORFF, whose for loops are coterminous with all of time and space."
-    },
-    {
-      "title": "Building User Interfaces with Electron and Atom",
-      "flavor": "article",
-      "date": "2011",
-      "publisher": {
-        "name": "Code Project",
-        "url": "http://codeproject.com"
-      },
-      "url": "http://codeproject.com/build-ui-electron-atom.aspx"
-    },
-    {
-      "title": "Jane Fullstacker's Blog",
+      "title": "Programming Standalone avr",
       "flavor": "blog",
-      "date": "2011",
+      "date": "2015-11",
       "publisher": {
         "name": "self",
-        "url": "http://janef.me"
+        "url": "http://prajankya.blogspot.in/"
       },
-      "url": "http://janef.me"
-    }
-  ],
-  "reading": [
-    {
-      "title": "r/programming",
-      "flavor": "website",
-      "url": "https://www.reddit.com/r/programming/",
-      "summary": "Daily reader and longtime lurker."
-    },
-    {
-      "title": "Hacker News / YCombinator",
-      "flavor": "website",
-      "url": "https://news.ycombinator.com/",
-      "summary": "Daily reader and longtime lurker."
-    }
-  ],
-  "speaking": [
-    {
-      "title": "Data Warehousing Evolved: DARMA 2.0",
-      "role": "Speaker",
-      "event": "OPENSTART 2013 Developer's Conference",
-      "location": "Portland, OR",
-      "date": "2012",
-      "highlights": [
-        "Won 'Best Presentation on an Emerging Technical Field' prize."
-      ]
+      "url": "hhttp://prajankya.blogspot.in/2015/11/programming-standalone-avr-with-arduino.html",
+      "summary": "A Guide for Programming Standalone avr  with Arduino as ISP without Bootloader"
     }
   ],
   "recognition": [
     {
-      "flavor": "award",
-      "from": "Google",
-      "title": "Honorable Mention",
-      "event": "Summer of Code",
-      "date": "2012"
-    },
-    {
       "flavor": "honor",
-      "from": "Cornell University",
-      "title": "Summa cum laude",
+      "from": "KPPS",
+      "title": "Best Outgoing Student",
       "event": "graduation",
-      "date": "2012"
-    }
-  ],
-  "references": [
-    {
-      "name": "John Davidson",
-      "flavor": "professional",
-      "private": true,
-      "contact": [
-        {
-          "label": "Mobile",
-          "flavor": "phone",
-          "value": "9-(999)-999-9999"
-        },
-        {
-          "label": "Work email",
-          "flavor": "email",
-          "value": "jdavidson@veridiandynamics.com"
-        }
-      ]
-    }
-  ],
-  "testimonials": [
-    {
-      "name": "John Davidson",
-      "flavor": "professional",
-      "quote": "Jane is awesome! I'd hire her again in a heartbeat.",
-      "private": true
-    },
-    {
-      "name": "Elias Fullstacker",
-      "flavor": "technical",
-      "quote": "I worked with Jane on Jabberwocky and can vouch for her awesome technical capabilities and attention to detail. Insta-hire."
-    },
-    {
-      "name": "Dana Nevins",
-      "flavor": "personal",
-      "quote": "I've known Jane personally and professionally for almost ten years. She is one in a million."
+      "date": "2013"
     }
   ],
   "languages": [
@@ -424,62 +406,20 @@
       "years": 3
     }
   ],
-  "extracurricular": [
-    {
-      "title": "Bay Area Crew Club",
-      "activity": "",
-      "location": "San Francisco, CA",
-      "start": "2014-05"
-    },
-    {
-      "title": "Organizer / Manager",
-      "activity": "JavaScript Game Development Meetup",
-      "location": "Austin, TX",
-      "start": "2011-03",
-      "end": "2014-01",
-      "highlights": [
-        "Monthly speaker on creative JavaScript development.",
-        "Founded group and oversaw growth to 500+ members."
-      ]
-    }
-  ],
-  "governance": [
-    {
-      "flavor": "board",
-      "role": "Member",
-      "organization": "The Mommies Network",
-      "url": "http://themommiesnetwork.org",
-      "start": "2008-02",
-      "end": "2010-01",
-      "summary": "Since 2008 I've been a full-time member of the board of directors for TMN."
-    },
-    {
-      "flavor": "committee",
-      "role": "Academic Contributor",
-      "organization": "Khronos Group",
-      "url": "https://www.khronos.org",
-      "start": "2015-01",
-      "highlights": [
-        "Participated in GORFF standardization process (Draft 2)."
-      ]
-    }
-  ],
   "interests": [
     {
       "name": "reading",
-      "summary": "Jane is a fan of mystery novels and courtroom dramas including Agatha Christie and John Grisham.",
+      "summary": "Prajankya is a fan of mystery and fictional novels including those of Dan Brown, C. S. Lewis and C. Doyle.",
       "keywords": [
         "mystery",
-        "Agatha Christie",
-        "John Grisham"
+        "fictional",
+        "C. S. Lewis",
+        "Dan Brown",
+        "C. Doyle"
       ]
     },
     {
-      "name": "hiking",
-      "summary": "Jane enjoys hiking, light mountain climbing, and has four summits under her belt!"
-    },
-    {
-      "name": "yoga"
+      "name": "Sketching"
     }
   ]
 }

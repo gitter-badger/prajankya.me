@@ -16,6 +16,11 @@ router.get('/', function(req, res, next) {
 router.get('/update', function(req, res, next) {
     var folder = path.join(path.join(path.join(__dirname, "../"), "data"), "out");
     emptyDir(folder);
+    try {
+        fs.unlinkSync(path.join(path.join(path.join(__dirname, "../"), "data"), "github.json"));
+    } catch (e) {
+        debug(e);
+    }
     global.resume.getResume("html", function(stream) {
         stream.pipe(res);
     })
@@ -152,7 +157,7 @@ var generateCombined = function(cb) {
                             }
                         }
                     } else {
-                        projects.push(item).value();
+                        projects.unshift(item).value();
                     }
                 });
                 cb();
