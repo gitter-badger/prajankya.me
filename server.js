@@ -17,8 +17,8 @@ var debug = require('debug')('http');
 
 debug('booting %s', name);
 
-global.resume = low('data/resume.json');
-resume.defaults({})
+global.resumeDB = low('data/resume.json');
+resumeDB.defaults({})
     .value();
 
 app.set('views', path.join(__dirname, 'views'));

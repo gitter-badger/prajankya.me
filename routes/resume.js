@@ -4,6 +4,8 @@ var debug = require('debug')('resume');
 var path = require('path');
 var fs = require('fs');
 
+global.resume = {};
+
 router.get('/', function(req, res, next) {
     global.resume.getResume("html", function(stream) {
         stream.pipe(res);
@@ -38,20 +40,20 @@ global.resume.getJSON_LD = function() {
     return {
         "@context": "http://www.schema.org",
         "@type": "person",
-        "name": global.resume.get("name").value(),
-        "jobTitle": global.resume.get("employment").get("history").get(0).get("position").value(),
-        "url": global.resume.get("contact").get("website").value(),
+        "name": global.resumeDB.get("name").value(),
+        "jobTitle": global.resumeDB.get("employment").get("history").get(0).get("position").value(),
+        "url": global.resumeDB.get("contact").get("website").value(),
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": global.resume.get("location").get("address").value(),
-            "addressLocality": global.resume.get("location").get("city").value(),
-            "addressRegion": global.resume.get("location").get("region").value(),
-            "postalCode": global.resume.get("location").get("code").value(),
-            "addressCountry": global.resume.get("location").get("country").value()
+            "streetAddress": global.resumeDB.get("location").get("address").value(),
+            "addressLocality": global.resumeDB.get("location").get("city").value(),
+            "addressRegion": global.resumeDB.get("location").get("region").value(),
+            "postalCode": global.resumeDB.get("location").get("code").value(),
+            "addressCountry": global.resumeDB.get("location").get("country").value()
         },
-        "image": global.resume.get("info").get("image").value(),
-        "email": global.resume.get("contact").get("email").value(),
-        "telephone": global.resume.get("contact").get("phone").value()
+        "image": global.resumeDB.get("info").get("image").value(),
+        "email": global.resumeDB.get("contact").get("email").value(),
+        "telephone": global.resumeDB.get("contact").get("phone").value()
     };
 };
 
