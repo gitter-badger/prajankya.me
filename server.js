@@ -8,10 +8,15 @@ var low = require("lowdb");
 
 /* -------------------------------- CONFIG -------------------------------*/
 
-var name = 'My CV';
-global.photoFile = "prajankya.jpg";
+var name = 'My CV'; // For debug
+var settings = {
+    photoFile: "prajankya.jpg", //then you can use http://website.url/photo for getting photo
+    github_username: "prajankya" //If not given, any part of github will not be shown
+};
 
 /* ----------------------------- END OF CONFIG ---------------------------*/
+
+global.settings = settings;
 
 var debug = require('debug')('http');
 
