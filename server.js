@@ -6,7 +6,13 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var low = require("lowdb");
 
+/* -------------------------------- CONFIG -------------------------------*/
+
 var name = 'My CV';
+global.photoFile = "prajankya.jpg";
+
+/* ----------------------------- END OF CONFIG ---------------------------*/
+
 var debug = require('debug')('http');
 
 debug('booting %s', name);
