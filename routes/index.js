@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
         res.end(colors.red.underline("Welcome To Prajankya's Personal Server"));
     } else {
         res.render('index', {
-            title: ''
+            title: global.resumeDB.get("name").value(),
+            ld: JSON.stringify(global.resume.getJSON_LD())
         });
     }
 });
