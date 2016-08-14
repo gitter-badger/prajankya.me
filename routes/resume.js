@@ -37,6 +37,7 @@ router.get('/:type', function(req, res, next) {
     if (ind > -1) {
         global.resume.getResume(req.params.type, function(stream) {
             res.writeHead(200, {
+                'Content-Disposition': 'attachment;filename=PrajankyaResume.' + ar[ind],
                 'Content-Type': mime[ind] + "; charset=utf-8"
             });
             stream.pipe(res);

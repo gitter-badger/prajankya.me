@@ -14,13 +14,26 @@
     </head>
 
     <body>
-        <iframe src="http://robertbue.no/playground/webgl/gc-effect/"></iframe>
+        <div id="bg"></div>
         <div id="wrapper">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <h1>Prajankya Sonar</h1>
-                        <h3><a href="/resume">Checkout my Resume</a></h3>
+                        <h3><a href="/resume">Checkout my Resume</a></h3> Or download as :
+                        <div class="btn-group">
+                            <button type="button" style="color:black" onclick="window.location.href='/resume/pdf'" class="btn btn-warning">PDF</button>
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                                <span style="color:black" class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/resume/json">JSON</a></li>
+                                <li><a href="/resume/md">Markdown</a></li>
+                                <li><a href="/resume/txt">Text</a></li>
+                                <li><a href="/resume/yml">YAML</a></li>
+                                <li><a href="/resume/doc">Doc</a></li>
+                            </ul>
+                        </div>
                         <h2 class="subtitle">I working hard to revamp this personal website and we'll be ready to launch after</h2>
                         <div id="countdown"></div>
                     </div>
@@ -37,17 +50,24 @@
             *,
             h2 {
                 font-family: 'Lato', sans-serif;
-                font-weight: 300;
+                font-weight: 400;
                 color: #fff;
             }
 
+            #bg {
+                z-index: -999;
+                position: fixed;
+            }
+
             body {
-                background: #394864;
-                background: url("/img/main-bg.jpg") no-repeat center top;
-                background-attachment: relative;
-                background-position: center center;
-                background-size: 100%;
-                background-size: cover;
+                background: -webkit-radial-gradient(center ellipse, #0869ad 0%, #000000 100%);
+                background: radial-gradient(ellipse at center, #0869ad 0%, #000000 100%);
+                //background: -webkit-radial-gradient(center ellipse, #2aa9e0 0%, #01070a 100%);
+                //background: radial-gradient(ellipse at center, #2aa9e0 0%, #01070a 100%);
+                //background: -webkit-radial-gradient(center ellipse, #9e79d7 0%, #24133e 100%);
+                //background: radial-gradient(ellipse at center, #9e79d7 0%, #24133e 100%);
+                //background: -webkit-radial-gradient(center ellipse, #7a86b8 0%, #121521 100%);
+                //background: radial-gradient(ellipse at center, #7a86b8 0%, #121521 100%);
                 font-size: 16px;
                 line-height: 1.6em;
                 -webkit-font-smoothing: antialiased;
@@ -81,21 +101,11 @@
 
             a {
                 font-weight: 700;
-                color: #ccf;
+                color: #adf;
             }
 
             a:hover {
                 color: #fff;
-            }
-
-            iframe {
-                position: fixed;
-                z-index: -999;
-                left: 0px;
-                top: 0px;
-                width: 100vw;
-                height: 100vh;
-                border: 0;
             }
         </style>
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -105,6 +115,136 @@
             $('#countdown').countdown('2016/09/01', function(event) {
                 $(this).html(event.strftime('%w weeks %d days <br /> %H:%M:%S'));
             });
+        </script>
+
+        <script>
+            var refreshDuration = 10000;
+            var refreshTimeout;
+            var numPointsX;
+            var numPointsY;
+            var unitWidth;
+            var unitHeight;
+            var points;
+
+            function onLoad() {
+                var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('width', window.innerWidth);
+                svg.setAttribute('height', window.innerHeight);
+                document.querySelector('#bg').appendChild(svg);
+
+                var unitSize = (window.innerWidth + window.innerHeight) / 20;
+                numPointsX = Math.ceil(window.innerWidth / unitSize) + 1;
+                numPointsY = Math.ceil(window.innerHeight / unitSize) + 1;
+                unitWidth = Math.ceil(window.innerWidth / (numPointsX - 1));
+                unitHeight = Math.ceil(window.innerHeight / (numPointsY - 1));
+
+                points = [];
+
+                for (var y = 0; y < numPointsY; y++) {
+                    for (var x = 0; x < numPointsX; x++) {
+                        points.push({
+                            x: unitWidth * x,
+                            y: unitHeight * y,
+                            originX: unitWidth * x,
+                            originY: unitHeight * y
+                        });
+                    }
+                }
+
+                randomize();
+
+                for (var i = 0; i < points.length; i++) {
+                    if (points[i].originX != unitWidth * (numPointsX - 1) && points[i].originY != unitHeight * (numPointsY - 1)) {
+                        var topLeftX = points[i].x;
+                        var topLeftY = points[i].y;
+                        var topRightX = points[i + 1].x;
+                        var topRightY = points[i + 1].y;
+                        var bottomLeftX = points[i + numPointsX].x;
+                        var bottomLeftY = points[i + numPointsX].y;
+                        var bottomRightX = points[i + numPointsX + 1].x;
+                        var bottomRightY = points[i + numPointsX + 1].y;
+
+                        var rando = Math.floor(Math.random() * 2);
+
+                        for (var n = 0; n < 2; n++) {
+                            var polygon = document.createElementNS(svg.namespaceURI, 'polygon');
+
+                            if (rando == 0) {
+                                if (n == 0) {
+                                    polygon.point1 = i;
+                                    polygon.point2 = i + numPointsX;
+                                    polygon.point3 = i + numPointsX + 1;
+                                    polygon.setAttribute('points', topLeftX + ',' + topLeftY + ' ' + bottomLeftX + ',' + bottomLeftY + ' ' + bottomRightX + ',' + bottomRightY);
+                                } else if (n == 1) {
+                                    polygon.point1 = i;
+                                    polygon.point2 = i + 1;
+                                    polygon.point3 = i + numPointsX + 1;
+                                    polygon.setAttribute('points', topLeftX + ',' + topLeftY + ' ' + topRightX + ',' + topRightY + ' ' + bottomRightX + ',' + bottomRightY);
+                                }
+                            } else if (rando == 1) {
+                                if (n == 0) {
+                                    polygon.point1 = i;
+                                    polygon.point2 = i + numPointsX;
+                                    polygon.point3 = i + 1;
+                                    polygon.setAttribute('points', topLeftX + ',' + topLeftY + ' ' + bottomLeftX + ',' + bottomLeftY + ' ' + topRightX + ',' + topRightY);
+                                } else if (n == 1) {
+                                    polygon.point1 = i + numPointsX;
+                                    polygon.point2 = i + 1;
+                                    polygon.point3 = i + numPointsX + 1;
+                                    polygon.setAttribute('points', bottomLeftX + ',' + bottomLeftY + ' ' + topRightX + ',' + topRightY + ' ' + bottomRightX + ',' + bottomRightY);
+                                }
+                            }
+                            polygon.setAttribute('fill', 'rgba(0,0,0,' + (Math.random() / 3) + ')');
+                            var animate = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+                            animate.setAttribute('fill', 'freeze');
+                            animate.setAttribute('attributeName', 'points');
+                            animate.setAttribute('dur', refreshDuration + 'ms');
+                            animate.setAttribute('calcMode', 'linear');
+                            polygon.appendChild(animate);
+                            svg.appendChild(polygon);
+                        }
+                    }
+                }
+
+                refresh();
+
+            }
+
+            function randomize() {
+                for (var i = 0; i < points.length; i++) {
+                    if (points[i].originX != 0 && points[i].originX != unitWidth * (numPointsX - 1)) {
+                        points[i].x = points[i].originX + Math.random() * unitWidth - unitWidth / 2;
+                    }
+                    if (points[i].originY != 0 && points[i].originY != unitHeight * (numPointsY - 1)) {
+                        points[i].y = points[i].originY + Math.random() * unitHeight - unitHeight / 2;
+                    }
+                }
+            }
+
+            function refresh() {
+                randomize();
+                for (var i = 0; i < document.querySelector('#bg svg').childNodes.length; i++) {
+                    var polygon = document.querySelector('#bg svg').childNodes[i];
+                    var animate = polygon.childNodes[0];
+                    if (animate.getAttribute('to')) {
+                        animate.setAttribute('from', animate.getAttribute('to'));
+                    }
+                    animate.setAttribute('to', points[polygon.point1].x + ',' + points[polygon.point1].y + ' ' + points[polygon.point2].x + ',' + points[polygon.point2].y + ' ' + points[polygon.point3].x + ',' + points[polygon.point3].y);
+                    animate.beginElement();
+                }
+                refreshTimeout = setTimeout(function() {
+                    refresh();
+                }, refreshDuration);
+            }
+
+            function onResize() {
+                document.querySelector('#bg svg').remove();
+                clearTimeout(refreshTimeout);
+                onLoad();
+            }
+
+            window.onload = onLoad;
+            window.onresize = onResize;
         </script>
     </body>
 
