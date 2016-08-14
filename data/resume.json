@@ -150,7 +150,7 @@
     "history": [
       {
         "employer": "RIG.solutions",
-        "url": "https://rig.solutions/",
+        "url": "http://rig.solutions/",
         "position": "Chief Technical Officer",
         "summary": "Development team manager for TrackMySalesman a workforce managing Software",
         "start": "2014-05",
@@ -179,7 +179,7 @@
       {
         "institution": "B.V. Bhoomaraddi College od Engineering and Technology",
         "title": "BE",
-        "url": "https://bvb.edu/",
+        "url": "http://bvb.edu/",
         "start": "2013-08",
         "grade": "4.0",
         "summary": "Automation and Robotics Engineering **GPA:4.0**",
@@ -205,14 +205,14 @@
       {
         "role": "Member",
         "organization": "IEEE",
-        "url": "https://www.ieee.org/index.html",
+        "url": "http://www.ieee.org/index.html",
         "start": "2013-06",
         "summary": "Member in good standing since 2013-06."
       },
       {
         "role": "Subscriber",
         "organization": "MSDN",
-        "url": "https://msdn.microsoft.com",
+        "url": "http://msdn.microsoft.com",
         "start": "2010",
         "summary": "Super-Ultra-gold level Ultimate Access MSDN subscriber package with subscription toaster and XBox ping pong racket."
       },
