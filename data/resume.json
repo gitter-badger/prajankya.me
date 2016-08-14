@@ -7,8 +7,8 @@
   "info": {
     "label": "Robotics Engineer",
     "characterClass": "Programmer",
-    "brief": "<p>I am a software developer, Network Engineer and also an Robotics Engineer interested Robotics and Computer Networking. I am currently working in RIG.solutions as its C.T.O. and in the Board of Directors. Previously I had worked as freelancer as a web and Android app Developer. I was and will always be an electronics hobbyist and programmer at core.</p><p> About me, I can say that I am a passionate developer, who enjoys agile practices and who is always willing to learn new technologies. Additionally, I spend my time acquiring more knowledge within the scope of Computer Networking, Robotics and Web backend developing.</p>",
-    "image": "http://prajankya.me/photo",
+    "brief": "<p>I am a software developer, Network Engineer and an Automation and Robotics Engineer interested in Robotics and Computer Networking. I am currently working in RIG.solutions as its C.T.O. and am in the Board of Directors. Previously I had worked as freelancer as a web and Android app Developer. I was and will always be an electronics hobbyist and programmer at core.</p><p> About me, I can say that I am a passionate developer, who enjoys agile practices and who is always willing to learn new technologies. Additionally, I spend my time acquiring more knowledge within the scope of Computer Networking, Robotics and Web backend developing.</p>",
+    "image": "/photo",
     "quote": "Be the change you want to see in the world."
   },
   "contact": {
@@ -24,7 +24,7 @@
     ]
   },
   "location": {
-    "address": "203,Vrindavan Appartment\nOpp. KLE Tech. University\nVidyanagar,\nHubballi, KA 580031",
+    "address": "203,Vrindavan Appartment.Opp. KLE Tech. University, Vidyanagar",
     "city": "Hubballi",
     "region": "KA",
     "code": "580031",
@@ -119,10 +119,34 @@
       "network": "GitHub",
       "user": "prajankya",
       "url": "https://github.com/prajankya"
+    },
+    {
+      "label": "Facebook",
+      "network": "facebook",
+      "user": "prajankya",
+      "url": "https://www.facebook.com/prajankya"
+    },
+    {
+      "label": "Google+",
+      "network": "google-plus",
+      "user": "prajankya",
+      "url": "https://plus.google.com/+PrajankyaSonar?rel=author"
+    },
+    {
+      "label": "Gitlab",
+      "network": "gitlab",
+      "user": "prajankya",
+      "url": "https://gitlab.com/u/Prajankya"
+    },
+    {
+      "label": "linkedin",
+      "network": "linkedin",
+      "user": "prajankya",
+      "url": "https://in.linkedin.com/in/prajankya"
     }
   ],
   "employment": {
-    "summary": "3+ years Web and software development, Network Planning and Setup experience.",
+    "summary": "5+ years Experience Web and software development, Network Planning and Setup. 7+ years experience in Electronics, circuit designing and fabrication",
     "history": [
       {
         "employer": "RIG.solutions",
@@ -327,42 +351,6 @@
           "Travis-ci"
         ]
       }
-    ],
-    "list": [
-      {
-        "name": "C++",
-        "id": "1",
-        "summary": "Optional summary of your experience with the skill.",
-        "level": "9",
-        "years": 7,
-        "proof": "http://myblog.com/interesting-cplusplus-post"
-      },
-      {
-        "name": "Ruby",
-        "id": "2",
-        "summary": "Optional summary of your experience with the skill.",
-        "level": "9",
-        "years": 7,
-        "proof": "http://myblog.com/interesting-cplusplus-post"
-      },
-      {
-        "name": "Xcode",
-        "summary": "Xcode 6 development.",
-        "level": "5",
-        "years": "3"
-      },
-      {
-        "name": "Linux",
-        "summary": "Optional summary of your experience with the skill.",
-        "level": "advanced",
-        "years": "4+"
-      },
-      {
-        "name": "Agile",
-        "summary": "Optional summary of your experience with the skill.",
-        "level": "B+",
-        "years": 2
-      }
     ]
   },
   "writing": [
@@ -384,7 +372,8 @@
       "from": "KPPS",
       "title": "Best Outgoing Student",
       "event": "graduation",
-      "date": "2013"
+      "url": "http://kpps.ac.in/",
+      "start": "2013-04"
     }
   ],
   "languages": [

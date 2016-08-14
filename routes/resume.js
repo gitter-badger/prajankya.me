@@ -84,7 +84,7 @@ global.resume.hackmyresume = function(callback) {
             'TO',
             'data/out/res.all',
             '--theme',
-            'modern'
+            path.join(path.join(path.join(__dirname, "../"), "data"), "fresh-theme-elegant")
         ];
         var hac = path.join(path.join(path.join(path.join(__dirname, "../"), "node_modules"), ".bin"), "hackmyresume");
         var cmd = require('child_process').spawn(hac, opts)
