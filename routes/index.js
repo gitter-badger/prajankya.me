@@ -16,6 +16,16 @@ router.get('/', function(req, res, next) {
         });
     }
 });
+router.get('/favicon.ico', function(req, res, next) {
+    var filepath = path.join(path.join(path.join(__dirname, ".."), "public"), "icon_" + global.settings.photoFile);
+    try {
+        fs.accessSync(filepath);
+        res.sendFile(filepath);
+    } catch (e) {
+        res.sendStatus(404);
+    }
+});
+
 
 router.get('/photo', function(req, res, next) {
     var filepath = path.join(path.join(path.join(__dirname, ".."), "public"), global.settings.photoFile);

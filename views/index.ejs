@@ -6,11 +6,94 @@
             <%=title%>
         </title>
         <% include includes.ejs %>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+            <script type="application/ld+json">
+                <%- ld %>
+            </script>
     </head>
 
     <body>
-        <script type="application/ld+json">
-            <%- ld %>
+        <div id="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h1>Prajankya Sonar</h1>
+                        <h3><a href="/resume">Checkout my Resume</a></h3>
+                        <h2 class="subtitle">I working hard to revamp this personal website and we'll be ready to launch after</h2>
+                        <div id="countdown"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <p class="copyright">Copyright &copy; 2016. All rights reserved. <a href="http://prajankya.mit-license.org/">Prajankya</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            @import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
+            *,
+            h2 {
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                color: #fff;
+            }
+
+            body {
+                background: #394864;
+                background: url("/img/main-bg.jpg") no-repeat center top;
+                background-attachment: relative;
+                background-position: center center;
+                background-size: 100%;
+                background-size: cover;
+                font-size: 16px;
+                line-height: 1.6em;
+                -webkit-font-smoothing: antialiased;
+                -webkit-overflow-scrolling: touch;
+                text-align: center;
+            }
+
+            @media screen and (min-width: 600px) {
+                #wrapper {
+                    padding: 50px 0;
+                }
+            }
+
+            #wrapper h1 {
+                margin-top: 60px;
+                margin-bottom: 40px;
+                font-size: 45px;
+                font-weight: 900;
+                letter-spacing: -1px;
+            }
+
+            h2.subtitle {
+                font-size: 24px;
+            }
+
+            #countdown {
+                font-size: 48px;
+                line-height: 1.1em;
+                margin: 40px 0 60px;
+            }
+
+            a {
+                font-weight: 700;
+                color: #ccf;
+            }
+
+            a:hover {
+                color: #fff;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="/js/jquery.countdown.min.js"></script>
+        <script type="text/javascript">
+            $('#countdown').countdown('2016/09/01', function(event) {
+                $(this).html(event.strftime('%w weeks %d days <br /> %H:%M:%S'));
+            });
         </script>
     </body>
 
