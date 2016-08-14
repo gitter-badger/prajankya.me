@@ -22,16 +22,16 @@
                         <h1>Prajankya Sonar</h1>
                         <h3><a href="/resume">Checkout my Resume</a></h3> Or download as :
                         <div class="btn-group">
-                            <button type="button" style="color:black" onclick="window.location.href='/resume/pdf'" class="btn btn-warning">PDF</button>
-                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                            <button type="button" style="color:black" onclick="window.location.href='/resume/pdf';window.dl('pdf')" class="btn btn-warning">PDF</button>
+                            <button type="button" onclick="optionsClick();" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
                                 <span style="color:black" class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/resume/json">JSON</a></li>
-                                <li><a href="/resume/md">Markdown</a></li>
-                                <li><a href="/resume/txt">Text</a></li>
-                                <li><a href="/resume/yml">YAML</a></li>
-                                <li><a href="/resume/doc">Doc</a></li>
+                                <li><a href="/resume/json" onclick="window.dl('json');">JSON</a></li>
+                                <li><a href="/resume/md" onclick="window.dl('markdown');">Markdown</a></li>
+                                <li><a href="/resume/txt" onclick="window.dl('text');">Text</a></li>
+                                <li><a href="/resume/yml" onclick="window.dl('yaml');">YAML</a></li>
+                                <li><a href="/resume/doc" onclick="window.dl('doc');">Doc</a></li>
                             </ul>
                         </div>
                         <h2 class="subtitle">I am working hard to revamp this personal website and It'll be ready to launch in</h2>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-lg-offset-3">
-                        <p class="copyright">Copyright &copy; 2016. All rights reserved. <a href="http://prajankya.mit-license.org/">Prajankya</a></p>
+                        <p class="copyright">Copyright &copy; 2016. All rights reserved. <a href="http://prajankya.mit-license.org/" onclick="goToLicense()">Prajankya</a></p>
                     </div>
                 </div>
             </div>
@@ -62,12 +62,6 @@
             body {
                 background: -webkit-radial-gradient(center ellipse, #0869ad 0%, #000000 100%);
                 background: radial-gradient(ellipse at center, #0869ad 0%, #000000 100%);
-                //background: -webkit-radial-gradient(center ellipse, #2aa9e0 0%, #01070a 100%);
-                //background: radial-gradient(ellipse at center, #2aa9e0 0%, #01070a 100%);
-                //background: -webkit-radial-gradient(center ellipse, #9e79d7 0%, #24133e 100%);
-                //background: radial-gradient(ellipse at center, #9e79d7 0%, #24133e 100%);
-                //background: -webkit-radial-gradient(center ellipse, #7a86b8 0%, #121521 100%);
-                //background: radial-gradient(ellipse at center, #7a86b8 0%, #121521 100%);
                 font-size: 16px;
                 line-height: 1.6em;
                 -webkit-font-smoothing: antialiased;
@@ -112,12 +106,38 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="/js/jquery.countdown.min.js"></script>
         <script type="text/javascript">
-            $('#countdown').countdown('2016/09/01', function(event) {
-                $(this).html(event.strftime('%w weeks %d days <br /> %H:%M:%S'));
-            });
-        </script>
+            ga('send', 'pageview', 'Landing Page');
 
-        <script>
+            function optionsClick() {
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'download_option',
+                    eventAction: 'interaction',
+                    eventLabel: 'Download Option Menu clicked to see types of download'
+                });
+            };
+
+            function goToLicense() {
+                ga('send', 'event', {
+                    eventCategory: 'My MIT License',
+                    eventAction: 'click',
+                    eventLabel: "going to prajankya.mit-license.org/",
+                    transport: 'beacon'
+                });
+            };
+
+            window.dl = function(type) {
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: type + ' resume',
+                    eventAction: 'download',
+                    eventLabel: 'Downloaded resume :' + type
+                });
+            };
+            $('#countdown').countdown('2016/09/01', function(event) {
+                $(this).html(event.strftime('%w weeks, %d days <br/> %H:%M:%S'));
+            });
+
             var refreshDuration = 10000;
             var refreshTimeout;
             var numPointsX;
@@ -249,3 +269,4 @@
     </body>
 
 </html>
+>

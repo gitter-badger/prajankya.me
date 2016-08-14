@@ -9,7 +9,22 @@ global.resume = {};
 
 router.get('/', function(req, res, next) {
     global.resume.getResume("html", function(stream) {
-        stream.pipe(res);
+        var data = '';
+        stream.on('data', function(chunk) {
+            data += chunk;
+        });
+
+        stream.on('end', function() {
+            data += global.ga_script;
+            data += "<script>ga('send', 'pageview', '/resume');";
+            data += '$(function(){$("a").click(function(e){' +
+                "ga('send','event',{eventCategory:'Outbound Link'," +
+                "eventAction:'click',eventLabel:'/resume/'+$(this).attr('href'),transport:'beacon'});" +
+                '});});';
+            data += "</script>";
+
+            res.end(data);
+        });
     });
 });
 
