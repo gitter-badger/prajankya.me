@@ -9,7 +9,7 @@ var low = require("lowdb");
 /* -------------------------------- CONFIG -------------------------------*/
 
 global.settings = {
-    photoFile: "prajankya.jpg", //then you can use http://website.url/photo for getting photo
+    photoFile: "prajankya.png", //then you can use http://website.url/photo for getting photo
     github_username: "prajankya", //If not given, any part of github will not be shown
     website: "prajankya.me" //The Website where this is going to get hosted(currently only used in github user agent)
 };
@@ -26,8 +26,6 @@ resumeDB.defaults({})
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.use(bodyParser.json({
     limit: '50mb'

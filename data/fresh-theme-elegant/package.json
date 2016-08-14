@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "fresh-theme-elegant",
+        "scope": null,
+        "escapedName": "fresh-theme-elegant",
+        "name": "fresh-theme-elegant",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/prajankya/work/prajankya.me"
+    ]
+  ],
+  "_from": "fresh-theme-elegant@latest",
+  "_id": "fresh-theme-elegant@0.1.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/fresh-theme-elegant",
+  "_nodeVersion": "5.11.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/fresh-theme-elegant-0.1.3.tgz_1463409950363_0.6542479495983571"
+  },
+  "_npmUser": {
+    "name": "backisbachus",
+    "email": "backisbachus@backisbachus.xyz"
+  },
+  "_npmVersion": "3.8.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "fresh-theme-elegant",
+    "scope": null,
+    "escapedName": "fresh-theme-elegant",
+    "name": "fresh-theme-elegant",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/fresh-theme-elegant/-/fresh-theme-elegant-0.1.3.tgz",
+  "_shasum": "8026b023bec5caae14be49cf3b9308677b367566",
+  "_shrinkwrap": null,
+  "_spec": "fresh-theme-elegant",
+  "_where": "/home/prajankya/work/prajankya.me",
+  "author": {
+    "name": "BackIsBachus",
+    "url": "https://github.com/BackIsBachus"
+  },
+  "bugs": {
+    "url": "https://github.com/BackIsBachus/fresh-theme-elegant/issues"
+  },
+  "dependencies": {},
+  "description": "Responsive resume theme for FRESH using using the Elegant theme from JSON-Resume.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "8026b023bec5caae14be49cf3b9308677b367566",
+    "tarball": "https://registry.npmjs.org/fresh-theme-elegant/-/fresh-theme-elegant-0.1.3.tgz"
+  },
+  "gitHead": "2e4b297ad817921b126261c2e31b493a3c44971a",
+  "homepage": "https://github.com/BackIsBachus/fresh-theme-elegant#readme",
+  "keywords": [
+    "fresh-themes",
+    "hackmyresume",
+    "fresh",
+    "fresca"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "backisbachus",
+      "email": "backisbachus@backisbachus.xyz"
+    }
+  ],
+  "name": "fresh-theme-elegant",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BackIsBachus/fresh-theme-elegant.git"
+  },
+  "scripts": {},
+  "version": "0.1.3"
+}
