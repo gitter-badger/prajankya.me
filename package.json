@@ -19,6 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "preinstall": "bash ./pdf_install.sh",
     "test": "./node_modules/.bin/mocha --reporter spec --timeout 15000",
     "start": "node server.js",
     "dev": "DEBUG=myServer,github,resume nodemon server.js"

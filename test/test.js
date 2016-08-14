@@ -186,6 +186,31 @@ describe("Main API Server", function() {
                 });
             });
         });
+        describe("/resume/pdf API", function() {
+            it("with curl", function(done) {
+                request({
+                    url: base_url + "/resume/pdf",
+                    headers: {
+                        'User-Agent': 'curl'
+                    }
+                }, function(error, response, body) {
+                    if (error) {
+                        done(error);
+                    }
+                    expect(response.statusCode).to.equal(200);
+                    done();
+                });
+            });
+            it("with browser", function(done) {
+                request(base_url + "/resume/pdf", function(error, response, body) {
+                    if (error) {
+                        done(error);
+                    }
+                    expect(response.statusCode).to.equal(200);
+                    done();
+                });
+            });
+        });
         describe("/resume/yml API", function() {
             it("with curl", function(done) {
                 request({

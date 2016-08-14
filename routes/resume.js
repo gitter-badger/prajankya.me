@@ -89,7 +89,9 @@ global.resume.hackmyresume = function(callback) {
             'TO',
             'data/out/res.all',
             '--theme',
-            "modern"
+            "modern",
+            "--pdf",
+            "wkhtmltopdf"
         ];
 
         var hac = path.join(path.join(path.join(path.join(__dirname, "../"), "node_modules"), ".bin"), "hackmyresume");
