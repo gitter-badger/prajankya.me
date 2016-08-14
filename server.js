@@ -11,10 +11,27 @@ var low = require("lowdb");
 global.settings = {
     photoFile: "prajankya.png", //then you can use http://website.url/photo for getting photo
     github_username: "prajankya", //If not given, any part of github will not be shown
-    website: "prajankya.me" //The Website where this is going to get hosted(currently only used in github user agent)
+    website: "prajankya.me", //The Website where this is going to get hosted(currently only used in github user agent)
+    google_analytics_id: "UA-69733143-5"
 };
 
 /* ----------------------------- END OF CONFIG ---------------------------*/
+
+global.ga_script = "<script>" +
+    "(function(i, s, o, g, r, a, m) {" +
+    "i['GoogleAnalyticsObject'] = r;" +
+    "i[r] = i[r] || function() {" +
+    "(i[r].q = i[r].q || []).push(arguments)" +
+    "}, i[r].l = 1 * new Date();" +
+    "a = s.createElement(o)," +
+    "m = s.getElementsByTagName(o)[0];" +
+    "a.async = 1;" +
+    "a.src = g;" +
+    "m.parentNode.insertBefore(a, m)" +
+    "})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');" +
+    "ga('create', '" + global.settings.google_analytics_id + "', 'auto');" +
+    "ga('require', 'linkid');" +
+    "</script>";
 
 var debug = require('debug')('myServer');
 

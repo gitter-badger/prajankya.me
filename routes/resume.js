@@ -9,7 +9,16 @@ global.resume = {};
 
 router.get('/', function(req, res, next) {
     global.resume.getResume("html", function(stream) {
-        stream.pipe(res);
+        var data = '';
+        stream.on('data', function(chunk) {
+            data += chunk;
+        });
+
+        stream.on('end', function() {
+            data += global.ga_script;
+            data += "<script>ga('send', 'pageview', '/resume');</script>";
+            res.end(data);
+        });
     });
 });
 
