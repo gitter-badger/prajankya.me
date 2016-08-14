@@ -31,9 +31,14 @@ router.get('/ld', function(req, res, next) {
 });
 
 router.get('/:type', function(req, res, next) {
-    var ar = ['html', 'json', 'doc', 'txt', 'yml', 'md'];
-    if (ar.indexOf(req.params.type) > -1) {
+    var ar = ['html', 'json', 'yml', 'md', 'txt', 'doc', 'pdf'];
+    var mime = ['text/html', 'application/json', 'text/yaml', 'text/markdown', 'text/plain', 'application/msword', 'application/pdf'];
+    var ind = ar.indexOf(req.params.type);
+    if (ind > -1) {
         global.resume.getResume(req.params.type, function(stream) {
+            res.writeHead(200, {
+                'Content-Type': mime[ind] + "; charset=utf-8"
+            });
             stream.pipe(res);
         });
     } else {
@@ -84,13 +89,30 @@ global.resume.hackmyresume = function(callback) {
             'TO',
             'data/out/res.all',
             '--theme',
-            path.join(path.join(path.join(__dirname, "../"), "data"), "fresh-theme-elegant")
+            "modern"
         ];
+
         var hac = path.join(path.join(path.join(path.join(__dirname, "../"), "node_modules"), ".bin"), "hackmyresume");
         var cmd = require('child_process').spawn(hac, opts)
             .on('close', function(closeCode) {
                 if (closeCode == 0) {
-                    callback();
+                    var opts = [
+                        'BUILD',
+                        path.join(path.join(path.join(__dirname, "../"), "data"), "resume_combined.json"),
+                        'TO',
+                        'data/out/res.html',
+                        '--theme',
+                        path.join(path.join(path.join(__dirname, "../"), "data"), "fresh-theme-elegant")
+                    ];
+                    var cmd2 = require('child_process').spawn(hac, opts)
+                        .on('close', function(closeCode2) {
+                            if (closeCode2 == 0) {
+                                callback();
+                            } else {
+                                console.error("hackmyresume run error, closed with code :" + closeCode2);
+                            }
+                        });
+                    c_log(cmd2);
                 } else {
                     console.error("hackmyresume run error, closed with code :" + closeCode);
                 }
@@ -98,6 +120,17 @@ global.resume.hackmyresume = function(callback) {
             .on('error', function(err) {
                 console.error(err);
             });
+        c_log(cmd);
+    });
+}
+
+function c_log(child) {
+    child.stdout.on('data', function(data) {
+        console.log(data.toString());
+    });
+
+    child.stderr.on('data', function(data) {
+        console.error(data.toString());
     });
 }
 
@@ -186,4 +219,4 @@ var emptyDir = function(dirPath) {
     }
 };
 
-module.exports = router;
+module.exports = router;;
