@@ -40,7 +40,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-lg-offset-3">
-                        <p class="copyright">Copyright &copy; 2016. All rights reserved. <a href="http://prajankya.mit-license.org/">Prajankya</a></p>
+                        <p class="copyright">Copyright &copy; 2016. All rights reserved. <a href="http://prajankya.mit-license.org/" onclick="goToLicense()">Prajankya</a></p>
                     </div>
                 </div>
             </div>
@@ -117,14 +117,14 @@
                 });
             };
 
-            function handleOutboundLinkClicks(event) {
+            function goToLicense() {
                 ga('send', 'event', {
-                    eventCategory: 'Outbound Link',
+                    eventCategory: 'My MIT License',
                     eventAction: 'click',
-                    eventLabel: event.target.href,
+                    eventLabel: "going to prajankya.mit-license.org/",
                     transport: 'beacon'
                 });
-            }
+            };
 
             window.dl = function(type) {
                 ga('send', {
