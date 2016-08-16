@@ -1,4 +1,6 @@
 # prajankya.me
+
+[![Join the chat at https://gitter.im/prajankyame/Lobby](https://badges.gitter.im/prajankyame/Lobby.svg)](https://gitter.im/prajankyame/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 My Personal Website
 
 [![Build Status](https://travis-ci.org/prajankya/prajankya.me.svg?branch=master)](https://travis-ci.org/prajankya/prajankya.me)
