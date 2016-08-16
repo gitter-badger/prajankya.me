@@ -10,6 +10,7 @@
     "debug": "^2.2.0",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
     "hackmyresume": "^1.8.0",
     "lodash": "^4.14.2",
     "lowdb": "^0.13.1",
@@ -22,7 +23,7 @@
     "preinstall": "bash ./pdf_install.sh",
     "test": "./node_modules/.bin/mocha --reporter spec --timeout 15000",
     "start": "node server.js",
-    "dev": "DEBUG=myServer,github,resume nodemon server.js"
+    "dev": "DEBUG=myServer,github,resume,* nodemon server.js"
   },
   "repository": {
     "type": "git",

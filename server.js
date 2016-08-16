@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var favicon = require('serve-favicon');
 var low = require("lowdb");
+var exphbs = require('express-handlebars');
 
 /* -------------------------------- CONFIG -------------------------------*/
 
@@ -43,6 +44,10 @@ resumeDB.defaults({})
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+//app.engine('ejs', engines.ejs);
+//app.engine('html', require('ejs').renderFile);
+//app.engine('handlebars', engines.handlebars);
+
 
 app.use(bodyParser.json({
     limit: '50mb'
@@ -53,16 +58,27 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 var resumes = require('./routes/resume');
 app.use('/resume', resumes);
+
+var posts = require('./routes/posts');
+app.use('/posts', posts);
+
+var hbs = exphbs.create({ /* config */ });
+app.engine('handlebars', hbs.engine);
+
+app.use("/post", function(req, res, next) {
+    app.set('view engine', 'handlebars');
+    next();
+});
+
 
 if (global.settings.github_username) {
     var github = require('./routes/github');
     app.use('/api/github', github);
 }
 
+app.use(express.static(path.join(__dirname, 'public')));
 var index = require('./routes/index');
 app.use('/', index);
 // catch 404 and forward to error handler
